@@ -7,17 +7,57 @@
   <title>Rock Paper Scissors</title>
   <meta name="description" content="This is a project from The Odin Project's curriculum">
   <meta name="author" content="SitePoint">
-
-  <script>
-  
-  
-  
-  
-  </script>
-
 </head>
-
 <body>
-  <script src="js/scripts.js"></script>
+    <script>
+  
+        let choices = ["rock", "paper", "scissors"];
+        let playerSelection = "rock";
+        let computerSelection;
+
+        function computerPlay() {
+          computerSelection = choices[Math.floor(Math.random() * choices.length)];
+          return computerSelection;
+        }
+        console.log(computerPlay())
+
+        function playerPlay(playerSelection) {
+            selectionLower = playerSelection.toLowerCase();
+            if (selectionLower = "rock") {
+                playerSelection = "rock";
+            }
+            else if (selectionLower = "paper") {
+                playerSelection = "paper"
+            }
+            else {
+                playerSelection = "scissors"
+            }
+            return playerSelection;
+        }
+        
+        console.log(playerPlay("ROck"))
+
+        function playRound(playerSelection, computerSelection) {
+            /// Outcomes if the player selects rock
+            
+            if (playerSelection == "rock" && computerSelection == "rock") {
+                    alert("You draw! You both picked rock.");
+                    }
+            else if (playerSelection == "rock" && computerSelection == "scissors") {
+                    alert("You win! Rock beats scissors.");
+                    }
+            else if (playerSelection == "rock" && computerSelection == "paper") {
+                    alert("You lose! Paper beats rock.");
+            }
+            else {
+                    alert("Unexpected result");
+            }
+        }
+
+        console.log(playRound(playerSelection, computerSelection))
+
+
+        
+    </script>
 </body>
 </html>
