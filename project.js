@@ -1,4 +1,3 @@
-<script>
 /// Creating the variables
 const choices = ["rock", "paper", "scissors"];
 let playerSelection = "paper";
@@ -70,5 +69,3 @@ function playRound(playerSelection, computerSelection) {
 }
 
 console.log(playRound(playerSelection, computerSelection))
-
-</script>
