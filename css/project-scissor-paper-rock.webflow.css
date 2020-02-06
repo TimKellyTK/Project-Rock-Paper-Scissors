@@ -59,11 +59,15 @@ body {
 }
 
 .score_text {
-  padding: 25px;
+  padding: 15px 25px;
 }
 
 .score_text.my_score {
-  background-color: #dfdfdf;
+  color: #9f91f8;
+}
+
+.score_text.computer_score {
+  color: #e45f5f;
 }
 
 .score_block {
@@ -85,7 +89,7 @@ body {
   -ms-grid-rows: auto;
   grid-template-rows: auto;
   border-radius: 5px;
-  background-color: #eee;
+  background-color: #171738;
 }
 
 .div-block-2 {
