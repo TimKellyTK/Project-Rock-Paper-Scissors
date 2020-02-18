@@ -148,7 +148,7 @@ body {
 }
 
 .game_result_box {
-  display: block;
+  display: none;
   margin-top: 10px;
   margin-bottom: 30px;
   padding: 30px;
