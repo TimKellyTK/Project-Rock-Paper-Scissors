@@ -147,6 +147,10 @@ body {
   text-align: center;
 }
 
+.player_select_box {
+  display: block;
+}
+
 .game_result_box {
   display: none;
   margin-top: 10px;
@@ -183,4 +187,5 @@ body {
   -ms-grid-column-align: center;
   justify-self: center;
 }
+
 

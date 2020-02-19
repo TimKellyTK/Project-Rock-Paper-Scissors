@@ -12,6 +12,7 @@ const playerScoreText = document.querySelector(".my_score");
 const roundSummaryText = document.querySelector("#round");
 const computerChoiceText = document.querySelector(".computer_choice");
 const roundResultBox = document.querySelector(".round_result_box");
+const playerSelectBox = document.querySelector(".player_select_box");
 const gameResultBox = document.querySelector(".game_result_box");
 
 
@@ -31,6 +32,7 @@ function checkForWinner() {
         if(computerScore >= 5 || playerScore >= 5) {
                 gameResultBox.style.display = "block";
                 roundResultBox.style.display = "none";
+                playerSelectBox.style.display = "none";
 
                 const gameResultText = document.querySelector("#game")
                 if (playerScore > computerScore) {
@@ -111,9 +113,18 @@ function playRound(playerSelection, computerSelection) {
 function newGame() {
         gameResultBox.style.display = "none";
         roundResultBox.style.display = "block";
+        playerSelectBox.style.display = "block";
+
         playerScore = 0;
         computerScore = 0;
-        roundCount = 1;
+        roundCount = 0;
+
+        playerScoreText.textContent = `Your Score: ${playerScore}`;
+        computerScoreText.textContent = `Computer Score: ${computerScore}`;
+
+        roundHeading.innerHTML = "Round: 1";
+        roundSummaryText.textContent = "";
+        computerChoiceText.textContent = "";
 }
 
 /// Event listener for player to choose scissors, paper or rock
@@ -128,18 +139,4 @@ buttons.forEach((button) => {
 
 /// Event listener for player to restart game
 const newGameButton = document.querySelector(".button_new_game");
-newGameButton.addEventListener('click',(e) => {
-        gameResultBox.style.display = "none";
-        roundResultBox.style.display = "block";
-
-        playerScore = 0;
-        computerScore = 0;
-        roundCount = 0;
-
-        playerScoreText.textContent = `Your Score: ${playerScore}`;
-        computerScoreText.textContent = `Computer Score: ${computerScore}`;
-
-        roundHeading.innerHTML = "Round: 1";
-        roundSummaryText.textContent = "";
-        computerChoiceText.textContent = "";
-      });
+newGameButton.addEventListener('click', newGame);
